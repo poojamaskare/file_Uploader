@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>File Uploader (Frontend Only)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>File Uploader</h1>
+  </header>
+
+  <main>
+    <section class="uploader">
+      <div id="dropzone" class="dropzone" aria-label="Drag and drop files here">
+        <div class="dropzone-text">Drag & drop a file here</div>
+        <div class="or">or</div>
+        <label class="file-input-label">
+          <input id="fileInput" type="file" />
+          Choose a file
+        </label>
+        <p class="rules">Allowed: PNG, JPEG, PDF, TXT. Max: 10MB.</p>
+      </div>
+      <button id="saveBtn" class="primary" disabled>Save to Browser</button>
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="list">
+      <div class="list-header">
+        <h2>Stored Files</h2>
+        <button id="refreshBtn" class="secondary">Refresh</button>
+      </div>
+      <table class="files-table" aria-label="Stored files">
+        <thead>
+          <tr>
+            <th>Filename</th>
+            <th>Type</th>
+            <th>Size</th>
+            <th>Uploaded</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="filesTbody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <small>Data is stored locally in your browser (IndexedDB).</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
